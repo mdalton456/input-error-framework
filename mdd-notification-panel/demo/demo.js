@@ -1,0 +1,1 @@
+var app = angular.module('demo', ['ngSanitize', 'mdalton456.mdd-notification-panel']);
