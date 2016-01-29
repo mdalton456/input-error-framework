@@ -1,0 +1,26 @@
+.tmp/
+*.log
+node_modules/
+**bower_components/
+demo/dist
+
+
+RemoteSystemsTempFiles
+/build
+/coverage
+
+#idea
+.idea
+*iml
+
+####eclipse
+.project
+.metadata
+
+##eclipse properties
+#project.properties
+/.npmignore
+/.settings
+#
+
+.DS_Store
