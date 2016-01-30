@@ -2,7 +2,7 @@
   "name": "mdd-notification-panel",
   "version": "0.0.8",
   "authors": [
-    "mdalton456"
+    "Matt Dalton <mdalton456>"
   ],
   "description": "",
   "main": "dist/mdd-notification-panel.js, dist/mdd-notification-panel.js",
@@ -15,9 +15,12 @@
     "test",
     "tests"
   ],
+  "dependencies": {
+  },
   "devDependencies": {
     "jquery": "~2.1.1",
     "angular": "~1.2.26",
+    "bootstrap": "~3.1.1",
     "angular-sanitize": "~1.2.26",
     "angular-mocks": "~1.2.26"
   }

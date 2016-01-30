@@ -1,0 +1,12 @@
+<div>
+    <div class="po-label">
+        {{poLabel || poLabelDefault}}
+    </div>
+    <div class="po-relative-input {{inputName}}" ng-class="{'po-valid':displayValid(), 'po-invalid': displayInvalid()}"
+         po-had-classes="{{poHadClasses}}">
+        <ng-transclude></ng-transclude>
+        <div class="po-input-validate-icon-relative">
+            <span class="po-input-validate-icon"></span>
+        </div>
+    </div>
+</div>
