@@ -1,0 +1,137 @@
+<div class="po-docs-section pos-inputs" ng-controller="PoInputsCtrl">
+    <h1 pod-heading="POS forms"></h1>
+
+    <h2 pod-sub-heading="po-input"></h2>
+
+    <p class="lead">po-input directive takes care of the validation on the input field, its styling and binding the
+        result to the model.</p>
+
+    <p>
+        <b>NOTE:</b>
+        when a non-default po-input type is provided, angular supported elements are not recommended.
+        Instead, it is recommended to create a new type and contribute back here. See the contributing section.</p>
+
+    <h3>Supported Arguments</h3>
+    <ul>
+        <li>*po-input="string" an enumeration of predefined input validations, defaults to "default"</li>
+        <li>*ng-model="string" (AJS) binds the validated input value to the provided model value</li>
+        <li>name="string" (AJS) access to the angular forms input result via $scope[formName][inputName]</li>
+        <li>po-label="string" sets the label. Angular evaluated (i.e. string value must use single quotes)</li>
+        <li>placeholder="string" (H5) sets the placeholder</li>
+        <li>class="string" (H5) classes specified here will be added in addition to the default .po-input class</li>
+        <li>... angular supported <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> elements</li>
+    </ul>
+    <p>Every po-input type supports default values for po-label and po-input. These can be overriden by implementing
+        these
+        attributes. All non-default po-input type examples below use the defaults. Taking the postcode as an
+        example:</p>
+
+    <p>All po-inputs need to be wrapped in a form or ng-form element to work. This is the same for all angular form
+        element components.</p>
+
+    <p>Default error handling is provided to input types, which will be triggered if a field returns invalid for
+        regex patterns or ng-required. These default messages can be customised by passing in a custom error object
+        for that failure type, or can be turned off by passing in an error message with empty strings. Examples for these
+        behaviours are shown below, along with an alert panel to display the errors.</p>
+
+    <div class="po-example po-input-default-arguments-example" data-example-id="arguments">
+        <p class="po-example-description"><b>Postcode with default attributes:</b></p>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ng-form name="examplePostcode">
+                    <input po-input="ukPostcode" ng-model="defaultArgumentsExample" required-error-obj="postCodeReqErrorObj" ng-required="true">
+                </ng-form>
+            </div>
+        </div>
+    </div>
+    <div hljs>
+        <input po-input="ukPostcode" ng-model="defaultArgumentsExample" required-error-obj="postCodeReqErrorObj" ng-required="true">
+    </div>
+    <div hljs>
+        //example controller.js - This overrides default ng-required message
+        $scope.postCodeReqErrorObj = {type: 'Alert', message: 'Please enter a Postcode in this box [Custom override example]'};
+    </div>
+
+    <div class="po-example po-input-arguments-example" data-example-id="arguments">
+        <p class="po-example-description"><b>Postcode with custom label and postcode:</b></p>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ng-form name="examplePostcode">
+                    <input po-input="ukPostcode" ng-model="argumentsExample" po-label="'UK Postcode'"
+                           placeholder="Enter Postcode" pattern-error-obj="postCodeBlankPatternErrorObj">
+                </ng-form>
+            </div>
+        </div>
+    </div>
+    <div hljs>
+        <input po-input="ukPostcode" ng-model="argumentsExample" po-label="'UK Postcode'" placeholder="Enter Postcode"
+               pattern-error-obj="postCodeBlankPatternErrorObj">
+    </div>
+    <div hljs>
+        //example controller.js
+        //blank strings in an error object suppress the creation of an error message
+        $scope.postCodeBlankPatternErrorObj = {type: '', message: ''};
+    </div>
+
+    <h3>ukPostcode</h3>
+
+    <p>Validates input against UK postcode regex
+
+    <p>
+
+    <div class="po-example po-input-postcode-example" data-example-id="po-alert-notification">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ng-form name="examplePostcode">
+                    <input po-input="ukPostcode" ng-model="model.postcodeInputModel" pattern-error-obj="postCodePatternErrorObj" >
+                    {{model.postcodeInputModel}}
+                </ng-form>
+            </div>
+        </div>
+
+
+        <div class="zero-clipboard"></div>
+    </div>
+    <div hljs>
+        <ng-form name="examplePostcode">
+            ...
+            <input po-input="ukPostcode" ng-model="model.postcodeInputModel" pattern-error-obj="postCodePatternErrorObj">
+            ...
+        </ng-form>
+    </div>
+    <div hljs>
+        //example controller.js - This overrides default regex pattern failure message
+        $scope.postCodePatternErrorObj = {type: 'Alert', message: 'This postcode is not in the correct valid UK format [Custom override example]'};
+    </div>
+
+    <h3>ukPhone</h3>
+
+    <p>Validates input against uk phone number regex
+
+    <p>
+
+    <div class="po-example po-input-uk-phone-example" data-example-id="po-phone-field">
+
+        <ng-form name="contactNumber" class="row">
+            <div class="col-xs-12">
+                <input po-input="ukPhone" ng-model="model.contactNumber">
+            </div>
+        </ng-form>
+
+        <div class="zero-clipboard"></div>
+    </div>
+    <div hljs>
+        <ng-form name="contactNumber">
+            ...
+            <input po-input="ukPhone" ng-model="model.contactNumber">
+            ...
+        </ng-form>
+    </div>
+    <p>
+        Sample alert panel for the above fields (if not shown there are no validation errors):
+    </p>
+    <po-alert-panel/>
+</div>

@@ -2,13 +2,13 @@
 <html ng-app="demo">
   <head>
     <meta charset="utf-8">
-    <title>AngularJS directive demo</title>hjvjhv
+    <title>AngularJS directive demo</title>
 
     <!-- TODO: Include Angular from Bower components -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="../bower_components/highlightjs/styles/default.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
-
     <link rel="stylesheet" href="../dist/mdd-notification-panel.css">
     <link rel="stylesheet" href="demo.css">
   </head>
@@ -20,12 +20,20 @@
         <h4>Simple usage</h4>
         <p>This is a simple usage of mdalton456.mdd-notification-panel</p>
         <pre>&lt;mdd-notification-panel&gt;&lt;/mdd-notification-panel&gt;</pre>
+        <div hljs>
+          //example controller.js - This overrides default ng-required message
+          $scope.postCodeReqErrorObj = {type: 'Alert', message: 'Please enter a Postcode in this box [Custom override example]'};
+        </div>
         <h4>Results</h4>
-        <mdd-notification-panel></mdd-notification-panel>
+        <div ng-include="'inputs/inputs.html'"></div>
       </div>
     </div>
+    <!--bower components-->
+    <script src="../bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="../bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
 
     <script src="../dist/mdd-notification-panel.js"></script>
     <script src="demo.js"></script>
+    <script src="inputs/inputs.controller.js"></script>
   </body>
 </html>
