@@ -1,7 +1,7 @@
 /*!
  * angular-directive-boilerplate
  * https://github.com/mohsen1/angular-directive-boilerplate
- * Version: 0.0.8 - 2016-02-04T17:33:27.900Z
+ * Version: 0.0.8 - 2016-02-04T17:51:00.535Z
  * License: 
  */
 
@@ -92,7 +92,7 @@
 .btn.po-input-contain.currency-input {
   left: 50px;
   text-align: center;
-  background-image: url("/bower_components/po-ui-component/assets/pound.png");
+  background-image: url("../dist/assets/pound.png");
   background-repeat: no-repeat;
   background-size: 50px 50px;
 }
@@ -179,7 +179,7 @@
 .po-search-input-text {
   width: 100%;
   height: 50px;
-  background-image: url("/bower_components/po-ui-component/assets/search.png");
+  background-image: url("../dist/assets/search.png");
   background-position: 98.5% 50%;
   background-repeat: no-repeat;
   background-size: 30px 30px;
@@ -220,7 +220,7 @@ po-input-transclude .po-relative-input[po-had-classes~='po-search-input-text'] .
   visibility: hidden;
 }
 po-input-transclude .po-relative-input[po-had-classes~='po-search-input-text'].po-invalid input.po-search-input-text {
-  background-image: url("/bower_components/po-ui-component/assets/search-invalid.png");
+  background-image: url("../dist/assets/search-invalid.png");
 }
 po-input-transclude[po-input-type~='validStyle'] .po-relative-input {
   position: relative;

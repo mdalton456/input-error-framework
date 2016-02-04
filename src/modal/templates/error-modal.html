@@ -2,7 +2,7 @@
     <div class='row'>
         <div class='col-xs-12 banner'>
             <a class="navbar-brand po-cross-link" href="" ng-click="close()">
-                <img class="po-cross" src="/bower_components/po-ui-component/assets/cross.png" alt="close">
+                <img class="po-cross" src="../dist/assets/cross.png" alt="close">
             </a>
             <h1 ng-bind="errorModal.title"></h1>
         </div>
@@ -16,7 +16,7 @@
                     </div>
                     <div class="po-cross-link" id="{{'error'+$index}}">
                         <a ng-if="error.type!='Alert'" href="" ng-click="closeError(error)">
-                            <img class="po-cross" src="/bower_components/po-ui-component/assets/black-cross.png" alt="close">
+                            <img class="po-cross" src="../dist/assets/black-cross.png" alt="close">
                         </a>
                     </div>
                 </div>

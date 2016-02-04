@@ -53,7 +53,7 @@ gulp.task('clean', function(cb) {
   del(['dist'], cb);
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', ['clean'], function() {
 
   function buildTemplates() {
     return gulp.src('src/**/*.html')
@@ -95,7 +95,7 @@ gulp.task('scripts', function() {
 });
 
 
-gulp.task('styles', function() {
+gulp.task('styles', ['clean'], function() {
 
   return gulp.src('src/mdd-input-error-framework.less')
       .pipe(inject(gulp.src(['src/**/*.less'], {read: false}), {
@@ -116,9 +116,9 @@ gulp.task('styles', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('images', function() {
+gulp.task('images', ['clean'], function() {
   return gulp.src('src/assets/*.png')
-      .pipe(gulp.dest('dist/assets/img'))
+      .pipe(gulp.dest('dist/assets'))
       .pipe(connect.reload());
 });
 
