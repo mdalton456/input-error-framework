@@ -96,7 +96,7 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
 
-  return gulp.src('src/mdd-input-error-framework.less')
+  return gulp.src('src/mdd-input-error-framework.less') //src/**/*.less') //
     .pipe(less())
     .pipe(header(config.banner, {
       timestamp: (new Date()).toISOString(), pkg: config.pkg
@@ -106,6 +106,14 @@ gulp.task('styles', function() {
     .pipe(rename({suffix: '.min.css'}))
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
+});
+
+gulp.task('images', function() {
+  return gulp.src('src/assets/*.png')
+      //.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+      .pipe(gulp.dest('dist/assets/img'))
+      .pipe(connect.reload());
+      //.pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('open', function(){
@@ -135,7 +143,7 @@ function handleError(err) {
   this.emit('end');
 };
 
-gulp.task('build', ['clean', 'scripts', 'styles']);
+gulp.task('build', ['clean', 'scripts', 'styles', 'images']);
 gulp.task('serve', ['build', 'connect', 'watch', 'open']);
 gulp.task('default', ['build', 'test']);
 gulp.task('test', ['build', 'jshint-test', 'karma']);
