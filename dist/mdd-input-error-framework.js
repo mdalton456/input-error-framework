@@ -1,7 +1,7 @@
 /*!
  * angular-directive-boilerplate
  * https://github.com/mohsen1/angular-directive-boilerplate
- * Version: 0.0.8 - 2016-02-04T13:05:33.338Z
+ * Version: 0.0.8 - 2016-02-04T16:14:32.938Z
  * License: MIT
  */
 
@@ -266,17 +266,15 @@ angular.module('po.input', [])
                     }
                 }
             }
-            return poInputRefData
-        }
+            return poInputRefData;
+        };
     });
 
 function validateMinDate(modelValue, minDate) {
-    'use strict';
     return modelValue > minDate;
 }
 
 function validateMaxDate(modelValue, maxDate) {
-    'use strict';
     return modelValue < maxDate;
 }
 
@@ -287,7 +285,6 @@ angular.module('po.input')
  ****************************************************************************/
 
     .directive('poInput', function ($compile, PoInputRefData) {
-        'use strict';
 
         function poInputTemplateElCompilerBuilder() {
             var baseInputEl,
@@ -447,7 +444,6 @@ angular.module('po.input')
     })
 
     .directive('poInputTransclude', ['poErrorHandler', function (poErrorHandler) {
-        'use strict';
         return {
             transclude: true,
             scope: {
@@ -460,7 +456,7 @@ angular.module('po.input')
                 poPatternErrorObj: '=',
                 poErrorJustAdded: '='
             },
-            templateUrl: 'src/inputs/templates/input-wrapper-template.html',
+            templateUrl: 'input/templates/input-wrapper-template.html', //'src/inputs/templates/input-wrapper-template.html',
             require: '^form',
             controller: 'PoInputValidatorCtrl',
             link: function (scope, el, attrs, ctrl) {
@@ -485,7 +481,9 @@ angular.module('po.input')
                                     for (var j = 0; j < poErrorHandler.length; j++) {
                                         var comparisonObj1 = poErrorHandler.getErrorArray()[j];
                                         var comparisonObj2 = scope.poErrorJustAdded[0];
-                                        if ((comparisonObj1.type === comparisonObj2.type) && (comparisonObj1.message === comparisonObj2.message) && (comparisonObj1.timestamp === comparisonObj2.timestamp)) {
+                                        if ((comparisonObj1.type === comparisonObj2.type)
+                                            && (comparisonObj1.message === comparisonObj2.message)
+                                            && (comparisonObj1.timestamp === comparisonObj2.timestamp)) {
                                             poErrorHandler.removeError(j);
                                             scope.poErrorJustAdded = [];
                                             break;
@@ -530,7 +528,6 @@ angular.module('po.input')
     }])
 
     .controller('PoInputValidatorCtrl', function ($scope) {
-        'use strict';
 
         function hasValidators(input) {
             return Object.getOwnPropertyNames(input.$validators).length > 0;
@@ -545,7 +542,7 @@ angular.module('po.input')
 
             return $scope.input && $scope.input.$invalid && $scope.input.$touched && ($scope.poRequired || (hasValidators($scope.input))) && true || false;
         };
-    })
+    });
 
 var openFuncNameErm = 'openErm';
 angular.module('po.modals', [])
@@ -591,11 +588,11 @@ angular.module('po.modals', [])
                         scope.mostRecentError = errorReceived;
                         if (errorReceived.type === 'Alert') {
                             scope.error = errorReceived.message;
-                            return 'src/alerts/templates/error-alert.html';
+                            return 'panel/templates/error-alert.html';
                         }
                         else if (errorReceived.type === 'Info') {
                             scope.info = errorReceived.message;
-                            return 'src/alerts/templates/info-alert.html';
+                            return 'panel/templates/info-alert.html';
                         }
                         else {
                             return '';
@@ -611,7 +608,7 @@ angular.module('po.modals', [])
     }])
     .controller('ErmModalCtrl', ['poErrorHandler', '$scope', '$modal', function (poErrorHandler, $scope, $modal) {
         $scope.errorModal = {
-            title: 'Notification Centre',
+            title: 'Notifications',
             errorList: []
         };
         $scope.mostRecentError = poErrorHandler.getMostRecentError();
@@ -622,7 +619,7 @@ angular.module('po.modals', [])
             $scope.$parent.erm = {checkbox: false};
             $modal.open({
                 animation: false,
-                templateUrl: 'src/modals/templates/error-modal.html',
+                templateUrl: 'modal/templates/error-modal.html',
                 scope: $scope,
                 controller: 'ErmModalInstanceCtrl',
                 size: 'lg',

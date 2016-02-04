@@ -115,7 +115,7 @@ gulp.task('open', function(){
 
 gulp.task('jshint-test', function(){
   return gulp.src('./test/**/*.js').pipe(jshint());
-})
+});
 
 gulp.task('karma', function (done) {
   karma.start({
