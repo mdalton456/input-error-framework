@@ -9,7 +9,7 @@ describe('Directive: po-input=', function () {
         input.$setTouched();
     }
 
-    beforeEach(module('po-ui-component'));
+    beforeEach(module('mdalton456.mdd-input-error-framework'));
 
     function setupDirective($compile,$rootScope,inputType){
         $scope = $rootScope;

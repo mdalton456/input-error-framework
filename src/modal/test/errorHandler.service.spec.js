@@ -2,7 +2,7 @@
 
 describe('Service errorHandler', function () {
 
-    beforeEach(module('po-ui-component'));
+    beforeEach(module('mdalton456.mdd-input-error-framework'));
     var poErrorHandler;
 
     beforeEach(inject(function(_poErrorHandler_){

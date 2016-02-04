@@ -4,7 +4,7 @@
 describe('Directive: po-input=', function () {
     var $scope, form, poInputTranscludeScope, poErrorHandler, compiledEl, inputEl, input, noErrorObj;
 
-    beforeEach(module('po-ui-component'));
+    beforeEach(module('mdalton456.mdd-input-error-framework'));
 
     function setupDirective($compile, $rootScope, inputType, _poErrorHandler_, reqErrorObj, pattErrorObj){
         $scope = $rootScope;

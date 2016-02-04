@@ -4,7 +4,7 @@ describe('Directive: Alerts -', function() {
     var element, scope, compile;
 
     // load the directive's module and view
-    beforeEach(module('po-ui-component'));
+    beforeEach(module('mdalton456.mdd-input-error-framework'));
 
     function setupSpecError() {
         element = compile(

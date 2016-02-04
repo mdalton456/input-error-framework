@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
 
     // Base path, that will be used to resolve files and exclude
-    basePath: 'mdd-input-error-framework',
+    basePath: './',
 
     // Frameworks to use
     frameworks: ['jasmine'],
@@ -16,7 +16,9 @@ module.exports = function(config) {
 
       'dist/mdd-input-error-framework.js',
       'dist/mdd-input-error-framework.css',
-      'test/**/*.spec.js'
+
+      'src/*.js',
+      'src/**/test/*.spec.js'
     ],
 
     // List of files to exclude

@@ -1,10 +1,10 @@
 {
-  "name": "angular-directive-boilerplate",
-  "version": "0.0.8",
-  "description": "Angular Publishable Directive Boilerplate",
+  "name": "input-error-framework",
+  "version": "0.0.0",
+  "description": "Error handling framework on an Angular input directive, connected to a notification panel and modal",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mohsen1/angular-directive-boilerplate.git"
+    "url": "git@github.com:mdalton456/input-error-framework.git"
   },
   "main": "dist/mdd-input-error-framework.js",
   "scripts": {
@@ -42,28 +42,5 @@
     "karma-jasmine": "^0.1.5",
     "mversion": "^1.6.0"
   },
-  "bugs": {
-    "url": "https://github.com/mohsen1/angular-directive-boilerplate/issues"
-  },
-  "homepage": "https://github.com/mohsen1/angular-directive-boilerplate",
-  "_id": "angular-directive-boilerplate@0.0.8",
-  "_shasum": "c1403812398582dfced6552889e07889e5ccec16",
-  "_from": "angular-directive-boilerplate@>=0.0.0 <0.1.0",
-  "_npmVersion": "1.4.9",
-  "_npmUser": {
-    "name": "mohsen",
-    "email": "msnazi@gmail.com"
-  },
-  "maintainers": [
-    {
-      "name": "mohsen",
-      "email": "msnazi@gmail.com"
-    }
-  ],
-  "dist": {
-    "shasum": "c1403812398582dfced6552889e07889e5ccec16",
-    "tarball": "http://registry.npmjs.org/angular-directive-boilerplate/-/angular-directive-boilerplate-0.0.8.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/angular-directive-boilerplate/-/angular-directive-boilerplate-0.0.8.tgz"
+  "directories": {}
 }

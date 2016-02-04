@@ -18,7 +18,7 @@ var plumber = require('gulp-plumber');
 var open = require('gulp-open');
 var less = require('gulp-less');
 var order = require("gulp-order");
-
+var _dirname = '.';
 
 var config = {
   pkg : JSON.parse(fs.readFileSync('./package.json')),
@@ -131,11 +131,13 @@ gulp.task('jshint-test', function(){
   return gulp.src('./test/**/*.js').pipe(jshint());
 });
 
-gulp.task('karma', function (done) {
+gulp.task('karma', ['build'], function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
-  }, done);
+  }, function() {
+    done();
+  });
 });
 
 gulp.task('karma-serve', function(done){
