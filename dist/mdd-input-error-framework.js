@@ -1,8 +1,8 @@
 /*!
  * angular-directive-boilerplate
  * https://github.com/mohsen1/angular-directive-boilerplate
- * Version: 0.0.8 - 2016-02-04T16:39:27.206Z
- * License: MIT
+ * Version: 0.0.8 - 2016-02-04T17:33:27.888Z
+ * License: 
  */
 
 
@@ -721,8 +721,7 @@ angular.module('po.modals', [])
         return errorArray;
     });
 
-angular.module("mdalton456.mdd-input-error-framework").run(["$templateCache", function($templateCache) {$templateCache.put("mdd-input-error-framework.html","<div class=\"mdd-input-error-framework\"><div>The value is {{getValue()}}</div><button ng-click=\"increment()\">+</button></div>");
-$templateCache.put("input/templates/input-wrapper-template.html","<div><div class=\"po-label\">{{poLabel || poLabelDefault}}</div><div class=\"po-relative-input {{inputName}}\" ng-class=\"{\'po-valid\':displayValid(), \'po-invalid\': displayInvalid()}\" po-had-classes=\"{{poHadClasses}}\"><ng-transclude></ng-transclude><div class=\"po-input-validate-icon-relative\"><span class=\"po-input-validate-icon\"></span></div></div></div>");
+angular.module("mdalton456.mdd-input-error-framework").run(["$templateCache", function($templateCache) {$templateCache.put("input/templates/input-wrapper-template.html","<div><div class=\"po-label\">{{poLabel || poLabelDefault}}</div><div class=\"po-relative-input {{inputName}}\" ng-class=\"{\'po-valid\':displayValid(), \'po-invalid\': displayInvalid()}\" po-had-classes=\"{{poHadClasses}}\"><ng-transclude></ng-transclude><div class=\"po-input-validate-icon-relative\"><span class=\"po-input-validate-icon\"></span></div></div></div>");
 $templateCache.put("modal/templates/error-modal.html","<div class=\"erm-modal container-fluid\"><div class=\"row\"><div class=\"col-xs-12 banner\"><a class=\"navbar-brand po-cross-link\" href=\"\" ng-click=\"close()\"><img class=\"po-cross\" src=\"/bower_components/po-ui-component/assets/cross.png\" alt=\"close\"></a><h1 ng-bind=\"errorModal.title\"></h1></div></div><div class=\"row\"><div class=\"error-container col-xs-12\"><div ng-repeat=\"error in errorModal.errorList\" class=\"notif-row-background\"><div class=\"error-row row\" ng-class=\"error.type+\'-row\'\"><div class=\"error-value-col\"><p class=\"error-value no-margin\">{{error.message}}</p></div><div class=\"po-cross-link\" id=\"{{\'error\'+$index}}\"><a ng-if=\"error.type!=\'Alert\'\" href=\"\" ng-click=\"closeError(error)\"><img class=\"po-cross\" src=\"/bower_components/po-ui-component/assets/black-cross.png\" alt=\"close\"></a></div></div></div></div></div></div>");
 $templateCache.put("panel/templates/error-alert.html","<div class=\"po-alert error\" ng-show=\"error\"><div class=\"alert-icon\"><img src=\"/bower_components/po-ui-component/assets/error.png\" class=\"img-responsive\"></div><div class=\"alert-text\"><p>{{error}}</p></div><div ng-show=\"numNotifications>1\" class=\"error-notif-num\">{{numNotifications}}</div><div ng-show=\"messageOverflow\" class=\"error-more-icon\">more</div></div>");
 $templateCache.put("panel/templates/info-alert.html","<div class=\"po-alert info\" ng-show=\"info\"><div class=\"alert-icon\"><img src=\"/bower_components/po-ui-component/assets/info.png\" class=\"img-responsive\"></div><div class=\"alert-text\"><p>{{info}}</p></div><div ng-show=\"numNotifications>1\" class=\"info-notif-num\">{{numNotifications}}</div><div ng-show=\"messageOverflow\" class=\"info-more-icon\">more</div></div>");}]);

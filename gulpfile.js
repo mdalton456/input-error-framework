@@ -5,6 +5,7 @@ var karma = require('karma').server;
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var header = require('gulp-header');
+var inject = require('gulp-inject');
 var rename = require('gulp-rename');
 var es = require('event-stream');
 var del = require('del');
@@ -96,7 +97,14 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
 
-  return gulp.src('src/mdd-input-error-framework.less') //src/**/*.less') //
+  return gulp.src('src/mdd-input-error-framework.less')
+      .pipe(inject(gulp.src(['src/**/*.less'], {read: false}), {
+        starttag: '/* inject:imports */',
+        endtag: '/* endinject */',
+        transform: function (filepath) {
+          return '@import ".' + filepath + '";';
+        }
+      }))
     .pipe(less())
     .pipe(header(config.banner, {
       timestamp: (new Date()).toISOString(), pkg: config.pkg
@@ -110,10 +118,8 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   return gulp.src('src/assets/*.png')
-      //.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
       .pipe(gulp.dest('dist/assets/img'))
       .pipe(connect.reload());
-      //.pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('open', function(){
