@@ -1,11 +1,11 @@
 {
-  "name": "mdd-notification-panel",
+  "name": "mdd-input-error-framework",
   "version": "0.0.8",
   "authors": [
     "Matt Dalton <mdalton456>"
   ],
   "description": "",
-  "main": "dist/mdd-notification-panel.js, dist/mdd-notification-panel.js",
+  "main": "dist/mdd-input-error-framework.js, dist/mdd-input-error-framework.js",
   "license": "MIT",
   "private": false,
   "ignore": [
@@ -19,10 +19,12 @@
   },
   "devDependencies": {
     "jquery": "~2.1.1",
-    "angular": "~1.2.26",
-    "bootstrap": "~3.1.1",
+    "angular": "~1.4.0",
+    "angular-bootstrap": "~0.13.0",
     "angular-highlightjs":"0.4.1",
     "angular-sanitize": "~1.2.26",
-    "angular-mocks": "~1.2.26"
+    "angular-mocks": "~1.2.26",
+    "angular-ui-router":"~0.2.10",
+    "bootstrap": "~3.1.1"
   }
 }

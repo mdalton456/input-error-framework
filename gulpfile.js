@@ -61,11 +61,11 @@ gulp.task('scripts', function() {
              spare: true,
              quotes: true
             }))
-      .pipe(templateCache({module: 'mdalton456.mdd-notification-panel'}));
+      .pipe(templateCache({module: 'mdalton456.mdd-input-error-framework'}));
   };
 
   function buildDistJS(){
-    return gulp.src('src/mdd-notification-panel.js')
+    return gulp.src('src/mdd-input-error-framework.js')
       .pipe(plumber({
         errorHandler: handleError
       }))
@@ -79,10 +79,10 @@ gulp.task('scripts', function() {
       errorHandler: handleError
     }))
     .pipe(order([
-      'mdd-notification-panel.js',
+      'mdd-input-error-framework.js',
       'template.js'
     ]))
-    .pipe(concat('mdd-notification-panel.js'))
+    .pipe(concat('mdd-input-error-framework.js'))
     .pipe(header(config.banner, {
       timestamp: (new Date()).toISOString(), pkg: config.pkg
     }))
@@ -96,7 +96,7 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
 
-  return gulp.src('src/mdd-notification-panel.less')
+  return gulp.src('src/mdd-input-error-framework.less')
     .pipe(less())
     .pipe(header(config.banner, {
       timestamp: (new Date()).toISOString(), pkg: config.pkg

@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git@github.com:mohsen1/angular-directive-boilerplate.git"
   },
-  "main": "dist/mdd-notification-panel.js",
+  "main": "dist/mdd-input-error-framework.js",
   "scripts": {
     "test": "./node_modules/gulp/bin/gulp.js test"
   },

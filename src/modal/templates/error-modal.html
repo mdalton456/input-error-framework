@@ -1,0 +1,26 @@
+<div class="erm-modal container-fluid">
+    <div class='row'>
+        <div class='col-xs-12 banner'>
+            <a class="navbar-brand po-cross-link" href="" ng-click="close()">
+                <img class="po-cross" src="/bower_components/po-ui-component/assets/cross.png" alt="close">
+            </a>
+            <h1 ng-bind="errorModal.title"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="error-container col-xs-12">
+            <div ng-repeat="error in errorModal.errorList" class="notif-row-background">
+                <div class="error-row row" ng-class="error.type+'-row'">
+                    <div class="error-value-col">
+                        <p class="error-value no-margin">{{error.message}}</p>
+                    </div>
+                    <div class="po-cross-link" id="{{'error'+$index}}">
+                        <a ng-if="error.type!='Alert'" href="" ng-click="closeError(error)">
+                            <img class="po-cross" src="/bower_components/po-ui-component/assets/black-cross.png" alt="close">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
 
     // Base path, that will be used to resolve files and exclude
-    basePath: 'mdd-notification-panel),
+    basePath: 'mdd-input-error-framework',
 
     // Frameworks to use
     frameworks: ['jasmine'],
@@ -14,8 +14,8 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-mocks/angular-mocks.js',
 
-      'dist/mdd-notification-panel.js',
-      'dist/mdd-notification-panel.css',
+      'dist/mdd-input-error-framework.js',
+      'dist/mdd-input-error-framework.css',
       'test/**/*.spec.js'
     ],
 

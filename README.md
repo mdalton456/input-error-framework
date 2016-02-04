@@ -2,19 +2,19 @@
 This repository includes an input field containing an error handling framework, alongside an alert panel and modal to
 handle the default errors. Additional errors can be passed into the input directive and new validation types can be added.
 
-# Mdd-notification-panel
+# mdd-input-error-framework
 
 ### Installation
 
 Install via bower
 
 ```shell
-bower install mdd-notification-panel
+bower install mdd-input-error-framework
 ```
 
 ### Usage
 
-Add it as a dependency to your app and then use mdalton456.mdd-notification-panel in your HTML files.
+Add it as a dependency to your app and then use mdalton456.mdd-input-error-framework in your HTML files.
 
 ### Development
 

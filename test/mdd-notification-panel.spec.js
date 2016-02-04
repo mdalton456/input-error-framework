@@ -1,6 +1,6 @@
 'use strict';
 
-describe('mdd-notification-panel', function () {
+describe('mdd-input-error-framework', function () {
   var scope, $compile, $rootScope, element;
 
   function createDirective(template) {
@@ -14,7 +14,7 @@ describe('mdd-notification-panel', function () {
     return elm;
   }
 
-  beforeEach(module('ngSanitize', 'mdalton456.mdd-notification-panel'));
+  beforeEach(module('ngSanitize', 'mdalton456.mdd-input-error-framework'));
   beforeEach(inject(function(_$rootScope_, _$compile_) {
     $rootScope = _$rootScope_;
     scope = $rootScope.$new();
@@ -25,8 +25,8 @@ describe('mdd-notification-panel', function () {
     if (element) element.remove();
   });
 
-  describe('as an element', function(){ runTestsWithTemplate('<mdd-notification-panel></mdd-notification-panel>'); });
-  describe('as an attribute', function(){ runTestsWithTemplate('<div mdd-notification-panel></div>'); });
+  describe('as an element', function(){ runTestsWithTemplate('<mdd-input-error-framework></mdd-input-error-framework>'); });
+  describe('as an attribute', function(){ runTestsWithTemplate('<div mdd-input-error-framework></div>'); });
 
   function runTestsWithTemplate(template) {
     describe('when created', function () {
