@@ -4,7 +4,10 @@ describe('Directive: Alerts -', function() {
     var element, scope, compile;
 
     // load the directive's module and view
-    beforeEach(module('mdalton456.mdd-input-error-framework'));
+    beforeEach(function() {
+        module('mdalton456.mdd-input-error-framework');
+        angular.mock.module('templates');
+    });
 
     function setupSpecError() {
         element = compile(

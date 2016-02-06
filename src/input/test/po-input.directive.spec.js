@@ -1,6 +1,5 @@
 'use strict';
 
-
 describe('Directive: po-input=', function () {
     var $scope, form, poInputTranslcudeScope, compiledEl, inputEl, input;
 
@@ -9,7 +8,10 @@ describe('Directive: po-input=', function () {
         input.$setTouched();
     }
 
-    beforeEach(module('mdalton456.mdd-input-error-framework'));
+    beforeEach(function() {
+        module('mdalton456.mdd-input-error-framework');
+        angular.mock.module('templates');
+    });
 
     function setupDirective($compile,$rootScope,inputType){
         $scope = $rootScope;

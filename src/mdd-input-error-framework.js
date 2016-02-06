@@ -448,7 +448,7 @@ angular.module('po.input')
                 poPatternErrorObj: '=',
                 poErrorJustAdded: '='
             },
-            templateUrl: 'input/templates/input-wrapper-template.html', //'src/inputs/templates/input-wrapper-template.html',
+            templateUrl: 'input/templates/input-wrapper-template.html',
             require: '^form',
             controller: 'PoInputValidatorCtrl',
             link: function (scope, el, attrs, ctrl) {

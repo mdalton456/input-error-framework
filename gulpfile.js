@@ -122,7 +122,7 @@ gulp.task('images', ['clean'], function() {
       .pipe(connect.reload());
 });
 
-gulp.task('open', function(){
+gulp.task('open', ['build'], function(){
   gulp.src('./demo/demo.html')
   .pipe(open('', {url: 'http://localhost:8080/demo/demo.html'}));
 });

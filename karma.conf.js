@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
 
     // Base path, that will be used to resolve files and exclude
-    basePath: './',
+    basePath: '',
 
     // Frameworks to use
     frameworks: ['jasmine'],
@@ -17,9 +17,20 @@ module.exports = function(config) {
       'dist/mdd-input-error-framework.js',
       'dist/mdd-input-error-framework.css',
 
-      'src/*.js',
+      'src/**/templates/*.html',
+      'src/helpers/*.js',
       'src/**/test/*.spec.js'
     ],
+
+    preprocessors : {
+      // generate js files from html templates
+      'src/**/templates/*.html': 'ng-html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'templates'
+    },
 
     // List of files to exclude
     exclude: [],
@@ -49,4 +60,5 @@ module.exports = function(config) {
     // if true, it capture browsers, run tests and exit
     singleRun: false
   });
+  'use strict';
 };

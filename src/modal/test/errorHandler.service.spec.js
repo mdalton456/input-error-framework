@@ -3,10 +3,14 @@
 describe('Service errorHandler', function () {
 
     beforeEach(module('mdalton456.mdd-input-error-framework'));
+    beforeEach(module(angular.mock.module('templates')));
+
+    //beforeEach(module(angular.mock.module('templates')));
     var poErrorHandler;
 
     beforeEach(inject(function(_poErrorHandler_){
         poErrorHandler = _poErrorHandler_;
+        console.log(poErrorHandler);
     }));
 
     it('should return the id of the added alert', function() {
