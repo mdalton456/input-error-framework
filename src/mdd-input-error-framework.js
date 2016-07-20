@@ -530,7 +530,6 @@ angular.module('po.input')
             return $scope.input && $scope.input.$valid && $scope.poRequired && true || false;
         };
         $scope.displayInvalid = function () {
-            //TODO need to handle when making invalid, then resetting and clicking away then back on the form
 
             return $scope.input && $scope.input.$invalid && $scope.input.$touched && ($scope.poRequired || (hasValidators($scope.input))) && true || false;
         };
@@ -640,7 +639,7 @@ angular.module('po.modals', [])
             type: '', message: '', timestamp: ''
         };
         var messageOverflow = false;
-        var characterLimit = 70;
+        var characterLimit = 120;
 
         function compareObjs(a, b) {
             if (a.type === "Alert" && b.type === "Info") {

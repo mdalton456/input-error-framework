@@ -2,11 +2,12 @@
 <html ng-app="demo">
   <head>
     <meta charset="utf-8">
-    <title>AngularJS directive demo</title>
+    <title>Input Error framework</title>
 
     <!-- TODO: Include Angular from Bower components -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../dist/assets/favicon.png"/>
     <link rel="stylesheet" href="../bower_components/highlightjs/styles/default.css" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="../dist/mdd-input-error-framework.css">
@@ -14,17 +15,9 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-muted">Demo</h1>
+      <h1 class="text-muted">Input Error framework</h1>
 
-      <div class="usage row">
-        <h4>Simple usage</h4>
-        <p>This is a simple usage of mdalton456.mdd-input-error-framework</p>
-        <pre>&lt;mdd-input-error-framework&gt;&lt;/mdd-input-error-framework&gt;</pre>
-        <div hljs>
-          //example controller.js - This overrides default ng-required message
-          $scope.postCodeReqErrorObj = {type: 'Alert', message: 'Please enter a Postcode in this box [Custom override example]'};
-        </div>
-        <h4>Results</h4>
+      <div>
         <div ng-include="'inputs/inputs.html'"></div>
       </div>
     </div>

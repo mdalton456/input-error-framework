@@ -1,38 +1,18 @@
 <div class="po-docs-section pos-inputs" ng-controller="PoInputsCtrl">
-    <h1 pod-heading="POS forms"></h1>
 
-    <h2 pod-sub-heading="po-input"></h2>
+    <p class="lead">The input error framework was developed to allow other project developers to be able to easily add
+        front-end error handling to their user stories.</p>
 
-    <p class="lead">po-input directive takes care of the validation on the input field, its styling and binding the
-        result to the model.</p>
+    <p>It is designed to be developer-friendly yet easily customisable. Developers can either use the default validation
+        types, or pass their own custom errors into a directive. Any errors or info messages will collect on a modal/alert
+        panel on the page, which can be used to prevent progress from the page if required.</p>
 
-    <p>
-        <b>NOTE:</b>
-        when a non-default po-input type is provided, angular supported elements are not recommended.
-        Instead, it is recommended to create a new type and contribute back here. See the contributing section.</p>
+    <p>Validation types are set using po-input. All po-inputs need to be wrapped in a form or ng-form element to work.</p>
 
-    <h3>Supported Arguments</h3>
-    <ul>
-        <li>*po-input="string" an enumeration of predefined input validations, defaults to "default"</li>
-        <li>*ng-model="string" (AJS) binds the validated input value to the provided model value</li>
-        <li>name="string" (AJS) access to the angular forms input result via $scope[formName][inputName]</li>
-        <li>po-label="string" sets the label. Angular evaluated (i.e. string value must use single quotes)</li>
-        <li>placeholder="string" (H5) sets the placeholder</li>
-        <li>class="string" (H5) classes specified here will be added in addition to the default .po-input class</li>
-        <li>... angular supported <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> elements</li>
-    </ul>
-    <p>Every po-input type supports default values for po-label and po-input. These can be overriden by implementing
-        these
-        attributes. All non-default po-input type examples below use the defaults. Taking the postcode as an
-        example:</p>
-
-    <p>All po-inputs need to be wrapped in a form or ng-form element to work. This is the same for all angular form
-        element components.</p>
-
-    <p>Default error handling is provided to input types, which will be triggered if a field returns invalid for
-        regex patterns or ng-required. These default messages can be customised by passing in a custom error object
-        for that failure type, or can be turned off by passing in an error message with empty strings. Examples for these
-        behaviours are shown below, along with an alert panel to display the errors.</p>
+    <p>Default error handling is provided to input types (e.g. Email address, phone, currency, time etc.), which will be
+        triggered if a field returns invalid for regex patterns or ng-required. These default messages can be customised
+        by passing in a custom error object for that failure type, or can be turned off by passing in an error message
+        with empty strings. Examples for these behaviours are shown below, along with an alert panel to display the errors.</p>
 
     <div class="po-example po-input-default-arguments-example" data-example-id="arguments">
         <p class="po-example-description"><b>Postcode with default attributes:</b></p>
@@ -44,6 +24,7 @@
                 </ng-form>
             </div>
         </div>
+        <br>
     </div>
     <div hljs>
         <input po-input="ukPostcode" ng-model="defaultArgumentsExample" required-error-obj="postCodeReqErrorObj" ng-required="true">
@@ -64,6 +45,7 @@
                 </ng-form>
             </div>
         </div>
+        <br>
     </div>
     <div hljs>
         <input po-input="ukPostcode" ng-model="argumentsExample" po-label="'UK Postcode'" placeholder="Enter Postcode"
@@ -82,7 +64,6 @@
     <p>
 
     <div class="po-example po-input-postcode-example" data-example-id="po-alert-notification">
-
         <div class="row">
             <div class="col-xs-12">
                 <ng-form name="examplePostcode">
@@ -91,7 +72,7 @@
                 </ng-form>
             </div>
         </div>
-
+    <br>
 
         <div class="zero-clipboard"></div>
     </div>
@@ -102,6 +83,7 @@
             ...
         </ng-form>
     </div>
+    <br>
     <div hljs>
         //example controller.js - This overrides default regex pattern failure message
         $scope.postCodePatternErrorObj = {type: 'Alert', message: 'This postcode is not in the correct valid UK format [Custom override example]'};
@@ -123,11 +105,10 @@
 
         <div class="zero-clipboard"></div>
     </div>
+    <br>
     <div hljs>
         <ng-form name="contactNumber">
-            ...
             <input po-input="ukPhone" ng-model="model.contactNumber">
-            ...
         </ng-form>
     </div>
     <p>

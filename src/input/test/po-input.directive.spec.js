@@ -8,10 +8,8 @@ describe('Directive: po-input=', function () {
         input.$setTouched();
     }
 
-    beforeEach(function() {
-        module('mdalton456.mdd-input-error-framework');
-        angular.mock.module('templates');
-    });
+    //beforeEach(module('templates'));
+    beforeEach(module('mdalton456.mdd-input-error-framework'));
 
     function setupDirective($compile,$rootScope,inputType){
         $scope = $rootScope;

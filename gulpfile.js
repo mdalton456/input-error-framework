@@ -38,6 +38,10 @@ gulp.task('connect', function() {
   });
 });
 
+//gulp.task('connect-end', function() {
+//  connect.serverClose();
+//});
+
 gulp.task('html', function () {
   gulp.src(['./demo/*.html', '.src/*.html'])
     .pipe(connect.reload());
@@ -80,8 +84,8 @@ gulp.task('scripts', ['clean'], function() {
       errorHandler: handleError
     }))
     .pipe(order([
-      'mdd-input-error-framework.js',
-      'template.js'
+      'mdd-input-error-framework.js'//,
+      //'template.js'
     ]))
     .pipe(concat('mdd-input-error-framework.js'))
     .pipe(header(config.banner, {
@@ -135,9 +139,7 @@ gulp.task('karma', ['build'], function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
-  }, function() {
-    done();
-  });
+  }, done);
 });
 
 gulp.task('karma-serve', function(done){
@@ -149,7 +151,7 @@ gulp.task('karma-serve', function(done){
 function handleError(err) {
   console.log(err.toString());
   this.emit('end');
-};
+}
 
 gulp.task('build', ['clean', 'scripts', 'styles', 'images']);
 gulp.task('serve', ['build', 'connect', 'watch', 'open']);

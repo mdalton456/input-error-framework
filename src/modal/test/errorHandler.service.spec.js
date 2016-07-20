@@ -3,9 +3,9 @@
 describe('Service errorHandler', function () {
 
     beforeEach(module('mdalton456.mdd-input-error-framework'));
+    beforeEach(module('po.modals'));
     beforeEach(module(angular.mock.module('templates')));
 
-    //beforeEach(module(angular.mock.module('templates')));
     var poErrorHandler;
 
     beforeEach(inject(function(_poErrorHandler_){

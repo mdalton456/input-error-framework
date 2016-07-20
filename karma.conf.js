@@ -13,24 +13,27 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
 
       'dist/mdd-input-error-framework.js',
       'dist/mdd-input-error-framework.css',
 
       'src/**/templates/*.html',
       'src/helpers/*.js',
-      'src/**/test/*.spec.js'
+        'src/input/test/*.directive.spec.js'
+      //'src/**/test/*.spec.js'
+
     ],
 
-    preprocessors : {
-      // generate js files from html templates
-      'src/**/templates/*.html': 'ng-html2js'
-    },
-
-    ngHtml2JsPreprocessor: {
-      stripPrefix: 'src/',
-      moduleName: 'templates'
-    },
+    //preprocessors : {
+    //  // generate js files from html templates
+    //  'src/**/templates/*.html': 'ng-html2js'
+    //},
+    //
+    //ngHtml2JsPreprocessor: {
+    //  stripPrefix: 'src/',
+    //  moduleName: 'templates'
+    //},
 
     // List of files to exclude
     exclude: [],
