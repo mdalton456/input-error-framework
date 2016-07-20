@@ -1,8 +1,8 @@
-# input-error-framework
+# Input Error Framework
 This repository includes an input field containing an error handling framework, alongside an alert panel and modal to
 handle the default errors. Additional errors can be passed into the input directive and new validation types can be added.
 
-# mdd-input-error-framework
+Please try `gulp serve`-ing the app to try some demo input fields.
 
 ### Installation
 
@@ -31,3 +31,6 @@ npm install -g gulp
 * `gulp test`: run tests
 * `gulp serve-test`: runs tests and keep test browser open for development. Watches for changes in source and test files to re-run the tests
 
+##### Note
+
+There are some intermittent (and environmental) problems with running the tests that I am in the process of resolving
